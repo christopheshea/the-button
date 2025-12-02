@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How do you feel?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    button {
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+    }
+  </style>
+</head>
+<body>
+  <button id="playBtn">Play The Thing</button>
+
+  <audio id="sound" src="sound.mp3" preload="auto"></audio>
+
+  <script>
+    const button = document.getElementById('playBtn');
+    const sound = document.getElementById('sound');
+
+    button.addEventListener('click', () => {
+      sound.currentTime = 0;
+      sound.play();
+    });
+  </script>
+</body>
+</html>
